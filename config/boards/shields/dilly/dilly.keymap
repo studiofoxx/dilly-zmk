@@ -17,7 +17,6 @@
         compatible = "zmk,keymap";
 
         default_layer {
-            display-name = "default";
 // Qwerty
 // -------------------------------------------------------------
 // |  Q  |  W  |  E  |  R  |  T  |  Y  |  U  |  I  |  O  |  P  |
@@ -29,6 +28,5 @@
     &kp A       &kp S       &kp D       &kp F       &kp G         &kp H           &kp J       &kp K       &kp L       &kp SEMI
     &kp Z       &kp X       &kp C       &lt LOWER V &kp LSFT      &kp SPACE       &lt RAISE M &kp COMMA   &kp DOT     &kp FSLH
             >;
-        };
     };
 };
