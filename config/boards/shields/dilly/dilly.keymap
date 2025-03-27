@@ -12,19 +12,6 @@
 #include <dt-bindings/zmk/backlight.h>
 
 
-&lt {
-    tapping-term-ms = <200>;
-    quick_tap_ms = <200>;
-    flavor = "balanced";
-};
-
-&sk {
-    release-after-ms = <3000>;
-};
-
-&caps_word {
-    continue-list = <UNDERSCORE BACKSPACE DELETE MINUS DOT>;
-  };
 
     behaviors {
         rgb_rotation: encoder_rotation_0 {
