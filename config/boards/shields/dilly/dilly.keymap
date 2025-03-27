@@ -11,8 +11,8 @@
 #include <dt-bindings/zmk/rgb.h>
 #include <dt-bindings/zmk/backlight.h>
 
-#define BASE  0     // alphas (Colemak-DH)
-#define QWRTY 1     // alphas (Qwerty)
+#define BASE  0     // alphas (Qwerty)
+#define LEMAK 1     // alphas (Colemak-DH)
 #define HNSDN 2     // alphas (Hands Down Neu 30)
 #define SEMMK 3     // alphas (Semimak JQ)
 #define RAISE 4     // symbols & numbers
