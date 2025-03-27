@@ -39,7 +39,6 @@
 
         default_layer {
             display-name = "default";
-            bindings = <
 // Qwerty
 // -------------------------------------------------------------
 // |  Q  |  W  |  E  |  R  |  T  |  Y  |  U  |  I  |  O  |  P  |
