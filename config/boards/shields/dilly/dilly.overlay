@@ -10,6 +10,30 @@
 
 #include <dt-bindings/zmk/matrix_transform.h>
 
+&pwm0 {
+  status = "okay";
+  pinctrl-0 = <&pwm0_default>;
+  pinctrl-1 = <&pwm0_sleep>;
+  pinctrl-names = "default", "sleep";
+};
+
+&pinctrl {
+    pwm0_default: pwm0_default {
+        group1 {
+            // Use P1.04 for LED backlight
+            psels = <NRF_PSEL(PWM_OUT0, 0, 36)>;
+	      };
+    };
+
+    pwm0_sleep: pwm0_sleep {
+        group1 {
+            // Use P1.04 for LED backlight
+            psels = <NRF_PSEL(PWM_OUT0, 0, 36)>;
+            low-power-enable;
+	      };
+    };
+};
+
 / {
     chosen {
         zmk,kscan = &kscan0;
@@ -35,21 +59,27 @@
         diode-direction = "col2row";
 
         col-gpios
-            = <&pro_micro 1  GPIO_ACTIVE_HIGH>
+            = <&pro_micro 0  GPIO_ACTIVE_HIGH>
+            , <&pro_micro 3  GPIO_ACTIVE_HIGH>
             , <&pro_micro 4  GPIO_ACTIVE_HIGH>
-            , <&pro_micro 5  GPIO_ACTIVE_HIGH>
-            , <&pro_micro 19 GPIO_ACTIVE_HIGH>
             , <&pro_micro 20 GPIO_ACTIVE_HIGH>
+            , <&pro_micro 21 GPIO_ACTIVE_HIGH>
             ;
 
         row-gpios
-            = <&pro_micro 6  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            = <&pro_micro 5  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&pro_micro 6  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             , <&pro_micro 7  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&pro_micro 8  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&pro_micro 18 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             , <&pro_micro 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             , <&pro_micro 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&pro_micro 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             ;
+    };
 
+    backlight: pwmleds {
+        compatible = "pwm-leds";
+        pwm_led_0 {
+            pwms = <&pwm0 0 10000 PWM_POLARITY_NORMAL>;
+        };
     };
 };
