@@ -1,4 +1,4 @@
-/*
+vvz/*
  * Copyright (c) 2021-23 purple-rw
  *
  * SPDX-License-Identifier: MIT
@@ -48,111 +48,6 @@
     continue-list = <UNDERSCORE BACKSPACE DELETE MINUS DOT>;
 };
 
-/ {
-    behaviors {
-        combos {
-            compatible = "zmk,combos";
-
-// Layers (Horizontal Combos)
-// -------------------------------------------------------------
-// |     |     |     |     |     |     |     |     |     |     |
-// |     |     |     |     |     |     |     |     |     |     |
-// |     |     |     |Keypd|Symbl|Keypd|Symbl|     |     |     |
-// -------------------------------------------------------------
-            combo_symbl { timeout-ms = <50>; key-positions = <24 26>; bindings = <&mo SYMBL>; layers = <BASE QWRTY HNSDN SEMMK>; };
-            combo_keypd { timeout-ms = <50>; key-positions = <23 25>; bindings = <&mo KEYPD>; layers = <BASE QWRTY HNSDN SEMMK>; };
-
-// Colemak (Horizontal Combos)
-// -------------------------------------------------------------
-// |     |<-  Esc  ->|     |     |     |     |<- BkSpc ->|     |
-// |     |     |     |<-   V   ->|<-   K   ->|     |     |     |
-// |     |<-  Tab  ->|     |     |     |     |<- Enter ->|     |
-// -------------------------------------------------------------
-            combo_esc   { timeout-ms = <50>; key-positions = < 1  2>; bindings = <&kp ESC>;   layers = <BASE QWRTY HNSDN SEMMK>; };
-            combo_tab   { timeout-ms = <50>; key-positions = <21 22>; bindings = <&kp TAB>;   layers = <BASE QWRTY HNSDN SEMMK>; };
-            combo_bspc  { timeout-ms = <50>; key-positions = < 7  8>; bindings = <&kp BSPC>;  layers = <BASE QWRTY HNSDN SEMMK>; };
-            combo_enter { timeout-ms = <50>; key-positions = <27 28>; bindings = <&kp ENTER>; layers = <BASE QWRTY HNSDN SEMMK>; };
-            combo_v     { timeout-ms = <50>; key-positions = <13 14>; bindings = <&kp V>;     layers = <BASE>; };
-            combo_k     { timeout-ms = <50>; key-positions = <15 16>; bindings = <&kp K>;     layers = <BASE>; };
-
-// Qwerty (Horizontal Combos)
-// -------------------------------------------------------------
-// |     |<-  Esc  ->|     |     |     |     |<- BkSpc ->|     |
-// |     |     |     |<-   B   ->|<-   N   ->|     |     |     |
-// |     |<-  Tab  ->|     |     |     |     |<- Enter ->|     |
-// -------------------------------------------------------------
-            combo_b     { timeout-ms = <50>; key-positions = <13 14>; bindings = <&kp B>;     layers = <QWRTY HNSDN>; };
-            combo_n     { timeout-ms = <50>; key-positions = <15 16>; bindings = <&kp N>;     layers = <QWRTY>; };
-
-// Hands Down Neu 30 (Horizontal Combos)
-// -------------------------------------------------------------
-// |     |<-  Esc  ->|     |     |     |     |<- Bkspc ->|     |
-// |     |     |     |<-   B   ->|<-   ;   ->|     |     |     |
-// |     |<-  Tab  ->|     |     |     |     |<- Enter ->|     |
-// -------------------------------------------------------------
-            combo_semi  { timeout-ms = <50>; key-positions = <15 16>; bindings = <&kp SEMI>;  layers = <HNSDN>; };
-
-// Semimak JQ (Horizontal Combos)
-// -------------------------------------------------------------
-// |     |<-  Esc  ->|     |     |     |     |<- Bkspc ->|     |
-// |     |     |     |<-   Q   ->|<-   P   ->|     |     |     |
-// |     |<-  Tab  ->|     |     |     |     |<- Enter ->|     |
-// -------------------------------------------------------------
-            combo_q     { timeout-ms = <50>; key-positions = <13 14>; bindings = <&kp Q>;     layers = <SEMMK>; };
-            combo_p     { timeout-ms = <50>; key-positions = <15 16>; bindings = <&kp P>;     layers = <SEMMK>; };
-
-// Symbols & Numbers (Horizontal Combos)
-// -------------------------------------------------------------
-// |     |     |     |     |     |     |     |     |     |     |
-// |     |     |     |<-   {   ->|<-   }   ->|     |     |     |
-// |     |     |     |     |     |     | *** |     |     |     |
-// -------------------------------------------------------------
-            combo_lbrc  { timeout-ms = <50>; key-positions = <13 14>; bindings = <&kp LBRC>;  layers = <RAISE>; };
-            combo_rbrc  { timeout-ms = <50>; key-positions = <15 16>; bindings = <&kp RBRC>;  layers = <RAISE>; };
-
-// Symbols (Horizontal Combos)
-// -------------------------------------------------------------
-// |     |     |     |     |     |     |     |     |     |     |
-// |     |     |     |<-   /   ->|<-   ?   ->|     |     |     |
-// |     |     |     |     | *** |     | *** |     |     |     |
-// -------------------------------------------------------------
-            combo_fslh  { timeout-ms = <50>; key-positions = <13 14>; bindings = <&kp FSLH>;  layers = <SYMBL>; };
-            combo_qmark { timeout-ms = <50>; key-positions = <15 16>; bindings = <&kp QMARK>; layers = <SYMBL>; };
-
-// Functions & Numbers (Horizontal Combos)
-// -------------------------------------------------------------
-// |     |     |     |     |     |     |     |     |     |     |
-// |     |     |     |<-  F12  ->|<-  Tab  ->|     |     |     |
-// |     |     |     | *** |     |     |     |     |     |     |
-// -------------------------------------------------------------
-            combo_f12   { timeout-ms = <50>; key-positions = <13 14>; bindings = <&kp F12>;   layers = <LOWER>; };
-            combo_tab2  { timeout-ms = <50>; key-positions = <15 16>; bindings = <&kp TAB>;   layers = <LOWER>; };
-
-// Functions & Keypad (Horizontal Combos)
-// -------------------------------------------------------------
-// |     |     |     |     |     |<-   =   ->|     |     |     |
-// |     |     |     |<-  F24  ->|<-   -   ->|     |     |     |
-// |     |     |     | *** |     | *** |     |<- Enter ->|     |
-// -------------------------------------------------------------
-            combo_f24   { timeout-ms = <50>; key-positions = <13 14>; bindings = <&kp F24>;       layers = <KEYPD>; };
-            combo_kpeql { timeout-ms = <50>; key-positions = < 5  6>; bindings = <&kp KP_EQUAL>;  layers = <KEYPD>; };
-            combo_kpmin { timeout-ms = <50>; key-positions = <15 16>; bindings = <&kp KP_MINUS>;  layers = <KEYPD>; };
-            combo_kpent { timeout-ms = <50>; key-positions = <27 28>; bindings = <&kp KP_ENTER>;  layers = <KEYPD>; };
-
-// Bluetooth & RGB (Horizontal Combos)
-// -------------------------------------------------------------
-// |<- Disp+ ->|     |     |     |     |    BT4   BT5   BT6    |
-// |<- Disp- ->|     |     |     |     |     |     |     |     |
-// |     |     |     |     |     |     |     |     |     |     |
-// -------------------------------------------------------------
-            combo_bt4   { timeout-ms = <50>; key-positions = < 6  7>; bindings = <&bt BT_SEL 4>;  layers = <ADJST>; };
-            combo_bt5   { timeout-ms = <50>; key-positions = < 7  8>; bindings = <&bt BT_SEL 5>;  layers = <ADJST>; };
-            combo_bt6   { timeout-ms = <50>; key-positions = < 8  9>; bindings = <&bt BT_SEL 6>;  layers = <ADJST>; };
-
-            combo_dpinc { timeout-ms = <50>; key-positions = < 1  2>; bindings = <&kp C_BRI_INC>; layers = <ADJST>; };
-            combo_dpdec { timeout-ms = <50>; key-positions = <11 12>; bindings = <&kp C_BRI_DEC>; layers = <ADJST>; };
-        };
-    };
 
     keymap {
         compatible = "zmk,keymap";
