@@ -10,7 +10,6 @@
         compatible = "zmk,keymap";
 
         default_layer {
-            bindings = <
 // Qwerty
 // -------------------------------------------------------------
 // |  Q  |  W  |  E  |  R  |  T  |  Y  |  U  |  I  |  O  |  P  |
