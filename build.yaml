@@ -15,5 +15,5 @@
 include:
   - board: nice_nano_v2
     shield: dilly
-#  - board: nice_nano_v2
-#    shield: settings_reset
+  - board: nice_nano_v2
+    shield: settings_reset
