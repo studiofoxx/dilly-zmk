@@ -17,13 +17,6 @@
   pinctrl-names = "default", "sleep";
 };
 
-&pinctrl {
-    pwm0_default: pwm0_default {
-        group1 {
-            // Use P1.04 for LED backlight
-            psels = <NRF_PSEL(PWM_OUT0, 0, 36)>;
-	      };
-    };
 
     pwm0_sleep: pwm0_sleep {
         group1 {
