@@ -12,7 +12,7 @@
 #include <dt-bindings/zmk/backlight.h>
 
 #define BASE  0     // alphas (Qwerty)
-#define CLMAK 1     // alphas (Colemak-DH)
+#define COLMK 1     // alphas (Colemak-DH)
 #define HNSDN 2     // alphas (Hands Down Neu 30)
 #define SEMMK 3     // alphas (Semimak JQ)
 #define RAISE 4     // symbols & numbers
