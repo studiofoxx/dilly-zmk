@@ -157,7 +157,7 @@
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer {
+        qwerty_layer {
 // (Hold)
 // -------------------------------------------------------------
 // |     |     |     |     |     |     |     |     |     |     |
