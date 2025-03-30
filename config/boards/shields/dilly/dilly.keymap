@@ -170,10 +170,10 @@
 // |  A  |  R  |  S  |  T  |  G  |  M  |  N  |  E  |  I  |  O  |
 // |  Z  |  X  |  C  |  D  |LSft |Space|  H  |  ,  |  .  |  /  |
 // -------------------------------------------------------------
-            bindings = < 
-    &kp Q       &kp W       &kp F       &kp P       &kp B         &kp J           &kp L       &kp U       &kp Y       &kp SEMI
-    &kp A       &kp R       &kp S       &kp T       &kp G         &kp M           &kp N       &kp E       &kp I       &kp O
-    &kp Z       &kp X       &kp C       &lt LOWER D &kp LSFT      &kp SPACE       &lt RAISE H &kp COMMA   &kp DOT     &kp FSLH
+            bindings = <
+    &kp Q       &kp W       &kp E       &kp R       &kp T         &kp Y           &kp U       &kp I       &kp O       &kp P
+    &kp A       &kp S       &kp D       &kp F       &kp G         &kp H           &kp J       &kp K       &kp L       &kp SEMI
+    &kp Z       &kp X       &kp C       &lt LOWER V &kp LSFT      &kp SPACE       &lt RAISE M &kp COMMA   &kp DOT     &kp FSLH
             >;
         } ;
 
@@ -185,9 +185,9 @@
 // |  Z  |  X  |  C  |  V  |LSft |Space|  M  |  ,  |  .  |  /  |
 // -------------------------------------------------------------
             bindings = < 
-    &kp Q       &kp W       &kp E       &kp R       &kp T         &kp Y           &kp U       &kp I       &kp O       &kp P
-    &kp A       &kp S       &kp D       &kp F       &kp G         &kp H           &kp J       &kp K       &kp L       &kp SEMI
-    &kp Z       &kp X       &kp C       &lt LOWER V &kp LSFT      &kp SPACE       &lt RAISE M &kp COMMA   &kp DOT     &kp FSLH
+    &kp Q       &kp W       &kp F       &kp P       &kp B         &kp J           &kp L       &kp U       &kp Y       &kp SEMI
+    &kp A       &kp R       &kp S       &kp T       &kp G         &kp M           &kp N       &kp E       &kp I       &kp O
+    &kp Z       &kp X       &kp C       &lt LOWER D &kp LSFT      &kp SPACE       &lt RAISE H &kp COMMA   &kp DOT     &kp FSLH
             >;
         } ;
 
