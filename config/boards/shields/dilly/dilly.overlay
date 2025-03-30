@@ -10,7 +10,37 @@
 
 #include <dt-bindings/zmk/matrix_transform.h>
 
+&pwm0 {
+  status = "okay";
+  pinctrl-0 = <&pwm0_default>;
+  pinctrl-1 = <&pwm0_sleep>;
+  pinctrl-names = "default", "sleep";
+};
+
+&pinctrl {
+    pwm0_default: pwm0_default {
+        group1 {
+            // Use P1.06 for LED backlight
+            psels = <NRF_PSEL(PWM_OUT0, 0, 36)>;
+	      };
+    };
+
+    pwm0_sleep: pwm0_sleep {
+        group1 {
+            // Use P1.06 for LED backlight
+            psels = <NRF_PSEL(PWM_OUT0, 0, 36)>;
+            low-power-enable;
+	      };
+    };
+};
+
 / {
+    chosen {
+        zmk,kscan = &kscan0;
+        zmk,matrix_transform = &default_transform;
+        zmk,backlight = &backlight;
+    };
+
     default_transform: keymap_transform_0 {
         compatible = "zmk,matrix-transform";
         columns = <5>;
@@ -44,5 +74,12 @@
             , <&pro_micro 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             , <&pro_micro 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             ;
+    };
+
+    backlight: pwmleds {
+        compatible = "pwm-leds";
+        pwm_led_0 {
+            pwms = <&pwm0 0 10000 PWM_POLARITY_NORMAL>;
+        };
     };
 };
