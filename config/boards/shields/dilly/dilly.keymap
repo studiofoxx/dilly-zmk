@@ -12,7 +12,7 @@
 #include <dt-bindings/zmk/backlight.h>
 
 #define BASE  0     // alphas (Qwerty)
-#define COLMK 1     // alphas (Colemak-DH)
+#define COLMK 1     // alphas (Colemak DH)
 #define HNSDN 2     // alphas (Hands Down Neu 30)
 #define SEMMK 3     // alphas (Semimak JQ)
 #define RAISE 4     // symbols & numbers
@@ -175,7 +175,7 @@
     &kp A       &kp S       &kp D       &kp F       &kp G         &kp H           &kp J       &kp K       &kp L       &kp SEMI
     &kp Z       &kp X       &kp C       &lt LOWER V &kp LSFT      &kp SPACE       &lt RAISE M &kp COMMA   &kp DOT     &kp FSLH
             >;
-        } ;
+        };
 
 
 
@@ -194,7 +194,7 @@
     &kp A       &kp R       &kp S       &kp T       &kp G         &kp M           &kp N       &kp E       &kp I       &kp O
     &kp Z       &kp X       &kp C       &lt LOWER D &kp LSFT      &kp SPACE       &lt RAISE H &kp COMMA   &kp DOT     &kp FSLH
             >;
-        } ;
+        };
 
 
         handsdownneu30_layer {
